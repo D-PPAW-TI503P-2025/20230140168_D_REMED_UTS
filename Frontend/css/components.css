@@ -1,0 +1,402 @@
+/* Component Styles */
+
+/* Buttons */
+.btn {
+  border-radius: var(--radius-md);
+  border: none;
+  padding: 0.75em 1.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-primary);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-white);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-sm {
+  padding: 0.5em 1em;
+  font-size: 0.875rem;
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--color-error), #dc2626);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.btn-danger:hover {
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, var(--color-info), #2563eb);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+}
+
+.btn-borrow {
+  background: linear-gradient(135deg, var(--color-success), #059669);
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-return {
+  background: linear-gradient(135deg, var(--color-warning), #d97706);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+}
+
+.btn i {
+  font-size: 1.2em;
+}
+
+/* Book Cards */
+.book-card {
+  background: var(--glass-bg-strong);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(15px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-base);
+  animation: slideUp 0.5s ease-out backwards;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--transition-slow);
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--glass-shadow-hover);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.book-card:hover::before {
+  opacity: 1;
+}
+
+.book-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--spacing-md);
+}
+
+.book-icon {
+  font-size: 2.5rem;
+  background: rgba(255, 255, 255, 0.3);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+}
+
+.book-title {
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-white);
+  line-height: 1.3;
+}
+
+.book-author {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.95rem;
+}
+
+.book-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.book-stock {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--text-white);
+  font-weight: 600;
+}
+
+.book-stock i {
+  font-size: 1.2rem;
+}
+
+.action-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+}
+
+/* Badges */
+.badge,
+.book-badge {
+  padding: 0.35em 0.85em;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.badge-available,
+.book-badge {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.badge-unavailable {
+  background: var(--color-error-light);
+  color: var(--color-error);
+}
+
+.status-badge {
+  padding: 0.4em 0.9em;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.status-returned {
+  background: var(--color-success-light);
+  color: var(--color-success);
+}
+
+.status-borrowed {
+  background: var(--color-warning-light);
+  color: var(--color-warning);
+}
+
+/* Forms */
+.input-glass {
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: var(--font-primary);
+  margin-bottom: var(--spacing-md);
+  outline: none;
+  width: 100%;
+  transition: all var(--transition-base);
+  color: var(--text-primary);
+}
+
+.input-glass::placeholder {
+  color: var(--text-muted);
+}
+
+.input-glass:focus {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+select.input-glass {
+  width: auto;
+  margin-bottom: 0;
+  padding: var(--spacing-md);
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--text-white);
+  font-size: 0.95rem;
+}
+
+/* Table */
+.table-container {
+  background: white;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s ease-out;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+}
+
+th {
+  padding: var(--spacing-lg) var(--spacing-md);
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: white;
+  border: none;
+}
+
+td {
+  padding: var(--spacing-lg) var(--spacing-md);
+  border-bottom: 1px solid #e5e7eb;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  transition: all var(--transition-fast);
+  animation: slideUp 0.3s ease-out backwards;
+}
+
+tbody tr:hover {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.05), transparent);
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.td-center {
+  text-align: center;
+}
+
+/* Table Info Cells */
+.user-info,
+.book-info,
+.date-info,
+.location-info {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.location-info span {
+  color: #1f2937 !important;
+  /* Force dark color */
+  font-weight: 500;
+}
+
+.user-info i,
+.book-info i,
+.date-info i,
+.location-info i {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+}
+
+.id-badge {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 0.3em 0.8em;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: inline-block;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: var(--spacing-xl);
+  right: var(--spacing-xl);
+  background: white;
+  padding: var(--spacing-lg) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: slideIn 0.3s ease-out;
+  max-width: 400px;
+  font-weight: 600;
+  border-left: 5px solid var(--color-success);
+}
+
+/* Form Container */
+#form-container {
+  margin-bottom: var(--spacing-xl);
+}
+
+#form-container h2 {
+  margin-bottom: var(--spacing-lg);
+  color: var(--text-white);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.form-actions .btn {
+  flex: 1;
+}
+
+/* Empty States */
+.empty-state {
+  text-align: center;
+  padding: var(--spacing-2xl);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.empty-state i {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.5;
+}
