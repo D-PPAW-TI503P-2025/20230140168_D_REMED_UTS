@@ -29,30 +29,41 @@ Akses web di `http://localhost:8080`
 
 ## 📸 Dokumentasi Screenshot (Folder `Frontend/SS`)
 
-Berikut adalah penjelasan dari file-file screenshot yang ada di dalam folder `Frontend/SS`:
+Berikut adalah penjelasan dan pratinjau dari file screenshot yang terdapat dalam folder `Frontend/SS`:
 
-### 1. Public Access (Tanpa Login)
-- **TampilanWebGuest.png & AllViewPublik.png**: Halaman utama yang bisa dilihat oleh tamu. Menampilkan daftar buku yang tersedia.
-- **ViewIDPublik.png**: Respon API saat melihat detail satu buku secara publik.
+### 1. Public & User Flows
 
-### 2. User Mode (Peminjaman)
-- **TampilanWebUser.png**: Dashboard saat login sebagai User.
-- **PinjamBukuUser.png**: Proses request peminjaman via API (Thunder Client).
-- **TampilanWebFlowPinjam1.png**: Modal konfirmasi peminjaman muncul saat klik "Pinjam".
-- **TampilanWebFlowPinjam2.png**: User memilih lokasi pengantaran/peminjaman menggunakan Map interaktif.
+| File Screenshot | Keterangan |
+| :--- | :--- |
+| **TampilanWebGuest.png** | Halaman utama untuk tamu (Guest), menampilkan daftar buku yang tersedia. |
+| **AllViewPublik.png** | Tampilan endpoint publik untuk melihat semua buku (API Response). |
+| **ViewIDPublik.png** | Tampilan endpoint publik untuk melihat detail satu buku (API Response). |
+| **TampilanWebUser.png** | Dashboard utama saat login sebagai User. |
+| **PinjamBukuUser.png** | Bukti request peminjaman buku menggunakan Thunder Client/API. |
+| **TampilanWebFlowPinjam1.png** | Flow Peminjaman (1): Modal konfirmasi awal saat tombol Pinjam diklik. |
+| **TampilanWebFlowPinjam2.png** | Flow Peminjaman (2): User memilih lokasi pengantaran di Peta sebelum konfirmasi. |
 
-### 3. Admin Mode (Manajemen Buku)
-- **TampilanWebDashboardAdmin.png**: Halaman admin dengan kontrol penuh (Edit/Hapus).
-- **TampilanWebTambahDataBukuAdmin.png**: Form untuk admin menambah stok buku baru.
-- **CreateDataAdmin.png**: Bukti sukses request API tambah buku.
-- **EditDataAdmin.png**: Bukti sukses request API update buku.
-- **DeleteDataAdmin.png**: Bukti sukses request API hapus buku.
-- **TampilanWebHapusBukuAdmin.png**: Tampilan modal konfirmasi hapus buku di web.
-- **TampilanWebAfterHapusAdmin.png**: Daftar buku setelah salah satu buku dihapus.
+### 2. Admin Management (Buku & Stok)
 
-### 4. Admin Mode (Riwayat & Log)
-- **TampilanWebRiwayatAdmin.png**: Tabel riwayat peminjaman user, lengkap dengan status dan koordinat lokasi.
-- **FlowPinjam1Admin.png s/d FlowPinjam4Admin.png**: Rangkaian flow testing API dari sisi Admin untuk memverifikasi logika peminjaman dan pengurangan stok.
+| File Screenshot | Keterangan |
+| :--- | :--- |
+| **TampilanWebDashboardAdmin.png** | Dashboard Admin dengan tombol aksi Edit dan Hapus pada setiap buku. |
+| **TampilanWebTambahDataBukuAdmin.png** | Form UI untuk Admin menambahkan data buku baru. |
+| **CreateDataAdmin.png** | Response sukses API saat Admin membuat data buku baru. |
+| **EditDataAdmin.png** | Response sukses API saat Admin mengupdate data buku. |
+| **DeleteDataAdmin.png** | Response sukses API saat Admin menghapus data buku. |
+| **TampilanWebHapusBukuAdmin.png** | Tampilan modal konfirmasi penghapusan buku di Website. |
+| **TampilanWebAfterHapusAdmin.png** | Tampilan daftar buku setelah data berhasil dihapus (stok/item berkurang). |
+
+### 3. Admin History & Testing Logic
+
+| File Screenshot | Keterangan |
+| :--- | :--- |
+| **TampilanWebRiwayatAdmin.png** | Tabel Riwayat Peminjaman di Admin Panel (termasuk koordinat lokasi). |
+| **FlowPinjam1Admin.png** | Testing Flow Admin (1): Cek stok awal sebelum peminjaman. |
+| **FlowPinjam2Admin.png** | Testing Flow Admin (2): Eksekusi peminjaman. |
+| **FlowPinjam3Admin(BerhasilKurangStock).png** | Testing Flow Admin (3): Verifikasi stok berkurang otomatis setelah peminjaman. |
+| **FlowPinjam4Admin.png** | Testing Flow Admin (4): Verifikasi log peminjaman masuk ke database. |
 
 ---
 
